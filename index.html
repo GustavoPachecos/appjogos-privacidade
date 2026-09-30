@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="app-version" content="1.0.0" />
+<meta name="privacy-policy-version" content="2026-09-28" />
+<!-- Falso positivo do semgrep: rel="canonical" nao carrega sub-recurso
+     nenhum, e so um ponteiro de URL para indexadores. O atributo integrity
+     so se aplica a script/style externos, e o navegador o ignora aqui -
+     nao existe conteudo cujo hash pudesse ser verificado. -->
+<!-- nosemgrep: html.security.audit.missing-integrity.missing-integrity -->
+<link rel="canonical" href="https://gustavopachecos.github.io/appjogos-privacidade/" />
 <title>Política de Privacidade — APPjogos</title>
 <style>
   :root {
@@ -10,16 +18,18 @@
     --bg: #FFFDF8;
     --text: #2B2B22;
     --muted: #5C5C4E;
-    --accent: #1CB0A1;
+    --accent: #087F74;
     --border: #E7E2D4;
+    --surface: #F7F3E9;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #161710;
       --text: #F3F1E7;
-      --muted: #B9B6A6;
-      --accent: #3FD6C4;
-      --border: #33342A;
+      --muted: #C9C6B8;
+      --accent: #62E3D4;
+      --border: #3D3E34;
+      --surface: #202119;
     }
   }
   * { box-sizing: border-box; }
@@ -28,15 +38,16 @@
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.65;
   }
   main {
-    max-width: 720px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 48px 20px 96px;
   }
   h1 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
+    line-height: 1.25;
     margin-bottom: 4px;
   }
   .atualizado {
@@ -46,23 +57,40 @@
     margin-bottom: 32px;
   }
   h2 {
-    font-size: 1.15rem;
-    margin-top: 40px;
+    font-size: 1.2rem;
+    margin-top: 42px;
     border-bottom: 1px solid var(--border);
     padding-bottom: 8px;
   }
   h3 {
     font-size: 1rem;
-    margin-top: 24px;
+    margin-top: 26px;
   }
   a { color: var(--accent); }
   ul { padding-left: 1.2em; }
-  li { margin-bottom: 6px; }
+  li { margin-bottom: 7px; }
+  .tabela {
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--surface); }
   .contato {
-    margin-top: 40px;
+    margin-top: 42px;
     padding: 16px 20px;
     border: 1px solid var(--border);
     border-radius: 12px;
+    background: var(--surface);
   }
   .aviso {
     font-size: 0.85rem;
@@ -76,88 +104,115 @@
 <body>
 <main>
   <h1>Política de Privacidade — APPjogos</h1>
-  <p class="atualizado">Última atualização: 13 de agosto de 2026</p>
+  <p class="atualizado">Última atualização: 28 de setembro de 2026 · Versão da política: 2026-09-28 · Aplicativo: 1.0.0</p>
 
-  <p>Esta política explica quais dados o aplicativo <strong>APPjogos</strong> processa, para quê, e quais direitos você tem sobre eles. Ela se aplica ao app disponível para Android e iOS.</p>
+  <p>Esta política explica como o <strong>APPjogos</strong> trata dados no aplicativo para Android e iOS. Os jogos funcionam sem conexão depois de instalados, mas anúncios e consentimento de anúncios usam serviços online da Apple ou do Google. O APPjogos é gratuito e não vende nenhum produto dentro do app.</p>
+  <p>O APPjogos não possui cadastro, login, conta de usuário, API ou servidor próprio.</p>
 
-  <h2>1. Quem é o responsável (controlador dos dados)</h2>
+  <h2>1. Responsável pelo aplicativo</h2>
   <p>
-    <strong>Luis Gustavo Pacheco Sousa</strong>, pessoa física, desenvolvedor responsável pelo APPjogos.<br />
+    <strong>Luis Gustavo Pacheco Sousa</strong>, pessoa física e desenvolvedor responsável pelo APPjogos.<br />
     Contato: <a href="mailto:lgustavopachecos@gmail.com">lgustavopachecos@gmail.com</a>
   </p>
 
-  <h2>2. Sobre o aplicativo</h2>
-  <p>O APPjogos é um app de jogos para grupos e festas, com mecânica de "passar o celular" entre os jogadores. Ele funciona <strong>100% offline</strong> — não existe servidor próprio, nem cadastro, login ou conta de usuário.</p>
+  <h2>2. Resumo dos dados tratados</h2>
+  <div class="tabela">
+    <table>
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Onde fica ou para onde vai</th>
+          <th>Finalidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nomes ou apelidos, configuração e estado da partida</td>
+          <td>Somente na memória do aparelho durante a sessão</td>
+          <td>Montar a roda e executar os jogos</td>
+        </tr>
+        <tr>
+          <td>Tema e IDs de itens já sorteados</td>
+          <td>Armazenamento local do app</td>
+          <td>Preferência visual e evitar repetição</td>
+        </tr>
+        <tr>
+          <td>IP/localização aproximada, identificadores, interação com produto/anúncios e diagnósticos</td>
+          <td>Podem ser enviados ao Google pelo AdMob quando anúncios são permitidos</td>
+          <td>Exibir e medir anúncios, analytics, desempenho e prevenção a fraude</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <h2>3. Quais dados processamos</h2>
+  <h2>3. Dados usados somente no aparelho</h2>
 
-  <h3>3.1 Dados salvos só no seu aparelho</h3>
+  <h3>3.1 Nomes e partidas</h3>
+  <p>Alguns jogos pedem nomes ou apelidos dos participantes. Eles, as respostas, os resultados, as configurações da partida e a decisão de acessar ou não conteúdo adulto ficam somente na memória enquanto o app está aberto. O código do APPjogos não salva esses nomes no armazenamento permanente nem os envia a um servidor ou aos SDKs de anúncios.</p>
+
+  <h3>3.2 Preferências e histórico local</h3>
+  <p>O app guarda localmente a preferência de tema e os identificadores das cartas ou perguntas já sorteadas.</p>
+  <p>No Android, o backup do aplicativo é desabilitado. Alguns fabricantes podem oferecer mecanismos próprios de transferência direta. No iOS, dados locais de suporte podem fazer parte do backup do sistema e reaparecer após uma restauração. Por isso, não prometemos que desinstalar o app apaga todas as cópias existentes em backups.</p>
+
+  <h2>4. Anúncios, consentimento e identificadores</h2>
+  <p>O APPjogos exibe anúncios intersticiais do <strong>Google AdMob</strong>.</p>
+  <p>O app consulta o estado do <strong>User Messaging Platform (UMP)</strong> do Google e apresenta o formulário quando exigido. O Google Mobile Ads só é inicializado e um anúncio só é carregado depois que o UMP informa que anúncios podem ser solicitados. Quando o UMP exigir, o app oferece uma opção de privacidade para rever escolhas.</p>
+  <p>A consulta de consentimento e os próprios serviços de anúncios precisam se comunicar com o Google e podem tratar dados técnicos necessários ao funcionamento. Consentimento para anúncios e <strong>App Tracking Transparency (ATT)</strong> não significam a mesma coisa: ATT trata de tracking conforme a definição da Apple, e não de toda comunicação técnica.</p>
+  <p>No iOS, o APPjogos solicita ATT somente em uma versão cuja configuração de anúncios realmente use tracking. Nesse caso, o pedido aparece de forma contextual e após uma ação da pessoa. Se tracking não estiver habilitado, o app não solicita ATT nem tenta acessar o IDFA. Negar ATT impede o acesso autorizado ao IDFA, mas anúncios limitados ou contextuais ainda podem ser exibidos quando o UMP permitir.</p>
+  <p>Quando o AdMob é usado, o Google informa que o SDK pode tratar:</p>
   <ul>
-    <li>Histórico dos itens já sorteados em cada jogo, para evitar repetição em partidas seguidas.</li>
-    <li>Preferência de tema (claro/escuro).</li>
-    <li>Status da compra do pacote premium, para manter o conteúdo liberado sem depender de conexão o tempo todo.</li>
+    <li>endereço IP, inclusive para estimar localização aproximada;</li>
+    <li>identificadores do dispositivo ou do app, como Advertising ID, App Set ID e, quando aplicável e autorizado no iOS, IDFA;</li>
+    <li>interações com o produto e com anúncios, como inicialização, taps, impressões e anúncios vistos;</li>
+    <li>diagnósticos e desempenho, como crash logs, tempo de inicialização, travamentos e consumo de energia.</li>
   </ul>
-  <p>Esses dados ficam salvos localmente no armazenamento do seu próprio aparelho. Nunca são enviados para nós ou para qualquer servidor — porque não existe servidor. São apagados automaticamente se você desinstalar o app, ou manualmente se limpar os dados do app nas configurações do sistema.</p>
+  <p>Esses dados podem ser usados pelo Google para publicidade, medição, analytics, melhoria de desempenho e prevenção a fraude. O tratamento varia conforme região, escolha de consentimento, configuração da conta e do aparelho e modo de veiculação. Consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a> e as <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">informações sobre publicidade do Google</a>.</p>
 
-  <h3>3.2 Dados processados por terceiros</h3>
-  <p><strong>Anúncios (Google AdMob).</strong> Usamos o AdMob para exibir anúncios entre partidas. Esse serviço usa o identificador de publicidade do seu aparelho (IDFA no iOS, GAID no Android) e outros dados técnicos para exibir e medir anúncios, podendo personalizá-los conforme suas preferências de rastreamento. No iOS, isso passa pelo prompt de rastreamento do próprio sistema (App Tracking Transparency) antes de qualquer coleta; no Android, pode ser ajustado nas configurações de anúncios do Google. O Google trata esses dados sob sua própria política: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
-  <p><strong>Compras dentro do app (App Store / Google Play).</strong> Quando você compra o pacote premium, o pagamento é processado inteiramente pela Apple ou pelo Google. Não temos acesso a dados de cartão nem armazenamos qualquer informação de pagamento — recebemos apenas a confirmação de que a compra foi concluída, para liberar o conteúdo correspondente.</p>
+  <h2>5. Permissões e dados que o app não acessa</h2>
+  <p>O produto final não solicita acesso a microfone, câmera, fotos, contatos, arquivos compartilhados, GPS, localização precisa, atividade física, acelerômetro ou outros sensores de movimento. Os efeitos sonoros são arquivos incluídos no app e não envolvem gravação de áudio nem reprodução contínua em segundo plano.</p>
+  <p>O APPjogos não lê mensagens, conversas ou conteúdo de outros aplicativos. Ele também não pede e-mail, telefone ou endereço. A localização aproximada que pode ser tratada pelo AdMob é inferida do endereço IP, sem permissão de GPS.</p>
+  <p>Não há SDK próprio de analytics ou crash reporting. Erros técnicos registrados pelo código próprio são minimizados e não incluem nome de jogador ou identificador publicitário; o app não os envia a um servidor próprio. O AdMob pode tratar diagnósticos conforme descrito na seção 4.</p>
 
-  <h3>3.3 Sensores do aparelho</h3>
-  <p>O jogo "Celular na Testa" usa o acelerômetro para detectar quando você inclina o celular. Essa leitura é processada apenas durante a partida, localmente no aparelho, e não é armazenada nem transmitida para lugar nenhum.</p>
-
-  <h3>3.4 O que não coletamos</h3>
-  <p>Não pedimos nem acessamos nome, e-mail, localização, contatos, câmera, fotos, ou qualquer identificador pessoal direto. A permissão de áudio do app existe apenas para tocar efeitos sonoros do jogo — nunca para gravar. Não há microfone, cadastro, login ou conta de usuário em nenhum momento.</p>
-
-  <h2>4. Com quem compartilhamos dados</h2>
-  <p>Só compartilhamos dados com os provedores estritamente necessários para as duas funções citadas acima:</p>
+  <h2>6. Compartilhamento, transferências e retenção</h2>
+  <p>O responsável pelo APPjogos não vende diretamente dados pessoais. Dados saem do aparelho somente pelo fluxo do provedor incorporado:</p>
   <ul>
-    <li><strong>Google (AdMob)</strong> — exibição e medição de anúncios.</li>
-    <li><strong>Apple / Google</strong> — processamento das compras dentro do app.</li>
+    <li><strong>Google AdMob/UMP</strong> — consentimento, entrega e medição de anúncios.</li>
   </ul>
-  <p>Não vendemos dados a ninguém, nem compartilhamos com qualquer outro terceiro além dos citados.</p>
+  <p>Esse provedor pode processar dados em outros países. Seus prazos de retenção dependem das políticas do provedor, da conta, da região e de obrigações legais; o APPjogos não controla nem promete um prazo único para registros mantidos pelo Google.</p>
+  <p>Dados em memória duram somente a sessão. Dados locais permanecem até serem substituídos, limpos pelo app ou apagados nas configurações do sistema, sujeitos às possibilidades de backup e restauração explicadas na seção 3.</p>
 
-  <h2>5. Transferência internacional de dados</h2>
-  <p>Os provedores citados acima (Google, Apple) podem processar dados em servidores localizados fora do Brasil, seguindo suas próprias políticas de privacidade e certificações de conformidade.</p>
+  <h2>7. Escolhas e direitos</h2>
+  <p>Quando aplicável, a opção <strong>Privacidade</strong> dentro do app permite reabrir as escolhas fornecidas pelo UMP. Também é possível controlar o identificador e a personalização de anúncios nas configurações do Android ou iOS e alterar a permissão de tracking nas configurações do iOS.</p>
+  <p>A pessoa pode fechar o app para encerrar os dados da sessão e limpar os dados do aplicativo nas configurações do sistema para remover o armazenamento local corrente.</p>
+  <p>No que se aplica ao tratamento realizado pelo responsável ou por seus operadores, a LGPD assegura direitos como confirmação e acesso ao tratamento, correção, informação sobre compartilhamento, oposição, portabilidade, eliminação quando cabível e revogação do consentimento. Solicitações podem ser enviadas ao contato abaixo. Como não há conta ou servidor próprio, pode não ser possível identificar dados mantidos exclusivamente pelo provedor; nesses casos, também podem ser usados os controles e canais da <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>.</p>
+  <p>Também é possível apresentar reclamação à <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">Autoridade Nacional de Proteção de Dados (ANPD)</a>.</p>
 
-  <h2>6. Classificação etária e conteúdo sensível</h2>
-  <p>O APPjogos é voltado ao público em geral, mas contém seções de conteúdo mais adulto/ousado, sempre sinalizadas dentro do próprio app antes de o jogador optar por acessá-las:</p>
+  <h2>8. Público-alvo</h2>
+  <p><strong>O APPjogos não é voltado a crianças.</strong> O público-alvo declarado nas lojas é exclusivamente de <strong>18 anos ou mais</strong>. Na App Store, a classificação pretendida é 18+ no sistema atual (podendo aparecer como 17+ em versões anteriores ao iOS 26). No Google Play, as classificações de conteúdo são atribuídas regionalmente a partir do questionário IARC; a publicação está condicionada a selecionar somente a faixa de 18 anos ou mais e ativar a restrição de acesso a menores. O app não participa do programa Google Play Families.</p>
+  <p>O conteúdo que motiva essa classificação:</p>
   <ul>
-    <li>Cartas "picantes" do jogo Verdade ou Desafio.</li>
-    <li>"Modo Viajado" do Termômetro da Opinião — temas mais abstratos, sugerido no próprio app como opção para jogar bebendo.</li>
+    <li>Cartas de temática adulta no Verdade ou Desafio — paquera, ciúme, contato físico leve entre os jogadores presentes.</li>
+    <li>Referências a bebida alcoólica em itens do Termômetro da Opinião e na descrição do "Modo Viajado".</li>
   </ul>
-  <p>Recomendamos supervisão de um responsável para o uso por menores de idade nessas seções específicas. Não coletamos intencionalmente dados de menores de 13 anos; caso um responsável identifique que isso ocorreu, pode contatar o e-mail abaixo para solicitar a remoção.</p>
+  <p>No início de cada sessão de Verdade ou Desafio, a roda faz uma <strong>autodeclaração</strong> de que todos têm 18 anos ou mais antes de qualquer carta adulta ser sorteada. Essa escolha fica apenas na memória durante a sessão atual. Quem responder que não pode continuar jogando normalmente, apenas com o conteúdo livre. Qualquer carta ou tema pode ser pulado, sem penalidade e sem perder a vez.</p>
+  <p>Algumas cartas envolvem pessoas que não estão jogando — por exemplo, pedindo para ler uma conversa ou mostrar uma foto. Essas cartas ficam atrás da confirmação de idade e trazem, na própria tela, um lembrete de consentimento junto do botão de pular: a recomendação explícita é falar apenas do que a pessoa ausente não se importaria de ouvir.</p>
+  <p>O app não cria perfil infantil nem solicita data de nascimento. Não coletamos intencionalmente dados de menores; se um responsável acreditar que uma criança forneceu informação a um provedor por meio do app, pode usar o contato abaixo para orientação e os controles do Google ou da Apple.</p>
 
-  <h2>7. Seus direitos (LGPD — Lei 13.709/2018)</h2>
-  <p>Como não mantemos servidor nem banco de dados com informações pessoais identificáveis — o conteúdo relevante fica só no seu aparelho — a maior parte dos seus dados já está sob seu controle direto: basta desinstalar o app ou limpar seus dados nas configurações do sistema.</p>
-  <p>Ainda assim, no que for aplicável ao tratamento feito por nós ou por nossos operadores (Google, Apple), você tem os direitos garantidos pela LGPD:</p>
-  <ul>
-    <li>Confirmação da existência de tratamento de dados.</li>
-    <li>Acesso aos dados.</li>
-    <li>Correção de dados incompletos, inexatos ou desatualizados.</li>
-    <li>Anonimização, bloqueio ou eliminação de dados desnecessários.</li>
-    <li>Portabilidade.</li>
-    <li>Eliminação dos dados tratados com base em consentimento.</li>
-    <li>Informação sobre com quem compartilhamos dados.</li>
-    <li>Revogação do consentimento.</li>
-  </ul>
-  <p>Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD): <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">gov.br/anpd</a>.</p>
+  <h2>9. Segurança</h2>
+  <p>As conexões do app e dos SDKs usam os mecanismos seguros oferecidos pelo sistema e pelos provedores. Nenhum método de transmissão ou armazenamento é totalmente isento de risco. Recomendamos manter o sistema atualizado e usar bloqueio de tela.</p>
 
-  <h2>8. Segurança</h2>
-  <p>Como não existe servidor nem banco de dados centralizado com informações de usuários, o principal ponto de atenção fica no próprio aparelho de cada pessoa — recomendamos manter o sistema operacional atualizado e usar bloqueio de tela. Os provedores terceiros citados (Google, Apple) mantêm suas próprias práticas de segurança, descritas em suas respectivas políticas.</p>
-
-  <h2>9. Alterações nesta política</h2>
-  <p>Esta política pode ser atualizada quando o app mudar — por exemplo, se um novo recurso passar a processar um novo tipo de dado. A data no topo desta página é sempre a da versão mais recente. Mudanças relevantes serão sinalizadas dentro do próprio app.</p>
+  <h2>10. Mudanças nesta política</h2>
+  <p>Esta política será revisada quando uma nova versão do app alterar os dados, SDKs ou finalidades descritos aqui. A data e a versão exibidas no topo identificam o texto aplicável. A versão publicada nesta URL deve corresponder ao comportamento do binário disponível nas lojas.</p>
 
   <div class="contato">
-    <h2 style="margin-top:0; border:none; padding:0;">10. Contato</h2>
+    <h2 style="margin-top:0; border:none; padding:0;">11. Contato</h2>
     <p style="margin-bottom:0;">
       Luis Gustavo Pacheco Sousa<br />
       <a href="mailto:lgustavopachecos@gmail.com">lgustavopachecos@gmail.com</a>
     </p>
   </div>
 
-  <p class="aviso">Este documento foi redigido como um rascunho estruturado a partir das práticas reais do app (auditadas no código-fonte) e da LGPD (Lei 13.709/2018) e das exigências de Google Play e App Store. Não substitui aconselhamento jurídico profissional — recomenda-se revisão por um advogado antes da publicação definitiva, especialmente diante de mudanças futuras no app ou na legislação.</p>
+  <p class="aviso">URL canônica: <a href="https://gustavopachecos.github.io/appjogos-privacidade/">https://gustavopachecos.github.io/appjogos-privacidade/</a>. Este documento foi elaborado a partir de uma auditoria técnica do aplicativo e não substitui aconselhamento jurídico profissional.</p>
 </main>
 </body>
 </html>
